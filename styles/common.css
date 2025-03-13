@@ -1,0 +1,68 @@
+:root {
+    --darkGray: rgb(44, 44, 44);
+
+    --fontSizeMainTitle: 60px;
+    --fontSizeSecondTitle: 48px;
+}
+
+@font-face {
+    src: url("../fonts/Lora-Bold.ttf");
+    font-family: LoraBold;
+}
+
+@font-face {
+    src: url("../fonts/OpenSans-Medium.ttf");
+    font-family: OpenSansMedium;
+}
+
+@font-face {
+    src: url("../fonts/OpenSans-SemiBold.ttf");
+    font-family: OpenSansSemiBold;
+}
+
+@font-face {
+    src: url("../fonts/OpenSans-Regular.ttf");
+    font-family: OpenSansRegular;
+}
+
+body {
+    font-family: OpenSansRegular, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.second-title {
+    text-align: center;
+    font-family: LoraBold, sans-serif;
+    font-size: var(--fontSizeSecondTitle);
+}
+
+.block-shadow {
+    background-color: #f5f5f587;
+    -webkit-box-shadow: 0 0 10px 11px #2C2C2C1C;
+    -moz-box-shadow: 0 0 10px 11px #2C2C2C1C;
+    box-shadow: 0 0 10px 11px #2C2C2C1C;
+}
