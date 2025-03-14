@@ -278,7 +278,7 @@
     z-index: 1;
 }
 
-.products__items-text a:hover {
+.products__items-text a {
     transition: .3s;
 }
 
