@@ -1,6 +1,6 @@
 :root {
     --darkGray: rgb(44, 44, 44);
-
+    --mainColor: rgb(44, 44, 44);
     --fontSizeMainTitle: 60px;
     --fontSizeSecondTitle: 48px;
 }

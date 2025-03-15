@@ -1,25 +1,26 @@
 @import "common.css";
+@import "animations.css";
 
 .main {
-    position: relative;
-}
-
-.main__parallax {
-    background: transparent;
-    height: 100vh;
-    padding: 0 15vw;
+    /*min-height: 100vh;*/
+    -webkit-box-shadow: 0 0 10px 11px #2C2C2C1C;
+    -moz-box-shadow: 0 0 10px 11px #2C2C2C1C;
+    box-shadow: 0 0 10px 11px #2C2C2C1C;
 }
 
 .main__container {
-    position: sticky;
-    top: 0;
-    margin-bottom: 5vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    margin-inline: auto;
+    width: fit-content;
 }
 
 .header {
     font-size: 20px;
     padding: 30px 0;
-    color: var(--darkGray);
+    transition: .3s;
 }
 
 .nav__list {
@@ -31,98 +32,228 @@
 }
 
 .nav__item a {
-    background-image: linear-gradient(
-            to bottom,
-            transparent 0%,
-            transparent 90%,
-            #2C2C2C 90%,
-            #2C2C2C 100%
-    );
-    background-repeat: no-repeat;
-    background-size: 0 100%;
-    background-position-x: right;
-    transition: background-size .3s;
-    padding-bottom: 4px;
+    position: relative;
+    color: var(--mainColor);
+    z-index: 15;
 }
 
-.nav__item:hover a {
-    background-size: 100% 100%;
-    background-position-x: left;
+.nav__item a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 3px;
+    transition: width 0.3s ease;
+    /*z-index: 20;*/
 }
 
+.dark-line::after {
+    background-color: var(--darkGray);
+}
+.light-line::after {
+    background-color: white;
+}
 
-.main__text {
-    max-width: 700px;
+.nav__item a:hover::after {
+    width: 100%;
 }
 
 .main__title {
     font-family: LoraBold, sans-serif;
-    color: var(--darkGray);
     font-size: var(--fontSizeMainTitle);
-    margin-top: 70px;
-    margin-bottom: 40px;
-}
-
-
-.main__info {
-    display: flex;
-    justify-content: space-between;
-}
-
-.main__info_item {
-    display: grid;
-    place-items: center;
-    gap: 30px;
-    text-align: center;
-}
-
-.main__logo-studio_inner {
-    display: flex;
-    gap: 15px;
-}
-
-.main__logo-skantreid_inner svg {
-    width: 150px;
-}
-
-.main__logo-studio_inner svg {
-    width: 200px;
-}
-
-.main__info_item-text {
-    font-family: OpenSansSemiBold, sans-serif;
-}
-
-.main__info_item-text span {
-    font-family: OpenSansMedium, sans-serif;
-}
-
-.stan-link, .stan-link:visited {
-    color: #1b4d9a;
-}
-
-.main__action {
-    height: 10vh;
-    width: 50%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: rgba(44, 44, 44, 0.03);
-    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--mainColor);
     transition: .3s;
 }
 
-.main__action svg {
+.main__companies {
     position: relative;
-    top: 10px;
-    width: 50px;
-    transform: scaleX(.9);
-    fill: #dfdfdf;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.main__action:hover {
-    background: rgba(44, 44, 44, 0.11);
+.main__slider {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
+
+.main__slide {
+    width: 100%;
+    height: 100%;
+}
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: var(--mainColor);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 30;
+}
+
+.slide-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+}
+
+.previous-slide-btn {
+    transform: rotate(180deg);
+    left: calc(100vw + 20px);
+}
+
+.next-slide-btn {
+    right: calc(100vw + 20px);
+}
+
+.slide-right {
+    animation: slide-right 0.5s ease-in-out forwards;
+}
+
+.slide-left {
+    animation: slide-left 0.5s ease-in-out forwards;
+}
+
+.main__company {
+    padding-top: 200px;
+    padding-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.main__text {
+    color: var(--mainColor);
+    max-width: 550px;
+    font-size: 20px;
+}
+
+.main__action {
+    width: 190px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    font-family: OpenSansMedium, sans-serif;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.main__image img {
+    width: 100%;
+}
+
+.company-studio {
+    background: linear-gradient(45deg, #1F3044, #34495E);
+    background: -webkit-linear-gradient(45deg, #1F3044, #34495E);
+    background: -moz-linear-gradient(45deg, #1F3044, #34495E);
+    z-index: 5;
+}
+
+.studio-logo {
+    width: 250px;
+}
+
+.studio-action, .studio-action:visited {
+    background-color: white;
+    color: var(--darkGray);
+}
+
+.studio-action:hover {
+    background-color: #e3e3e3;
+}
+
+.studio-image {
+    position: relative;
+    max-width: 550px;
+}
+
+.studio-image img {
+    position: relative;
+    z-index: 10;
+}
+
+.studio-image::after {
+    content: '';
+    background-image: url("../img/main/spine.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 60px;
+    height: 140px;
+    position: absolute;
+    top: 299px;
+    left: 30px;
+    z-index: 0;
+}
+
+.animate-spine::after {
+    animation: stitchNeedle 3s 2s infinite;
+}
+
+
+.company-skantreid {
+    background: -webkit-linear-gradient(225deg, rgb(235, 232, 225), rgb(250, 247, 240) 47%, rgb(245, 246, 240) 100%);
+    background: -moz-linear-gradient(225deg, rgb(235, 232, 225), rgb(250, 247, 240) 47%, rgb(245, 246, 240) 100%);
+    background: linear-gradient(225deg, rgb(235, 232, 225), rgb(250, 247, 240) 47%, rgb(245, 246, 240) 100%);
+}
+
+.company-skantreid .main__company {
+    padding-bottom: 164px;
+}
+
+.company-skantreid .main__inner {
+    margin-top: 80px;
+}
+
+.skantreid-text {
+    z-index: 5;
+}
+
+.skantreid-logo {
+    width: 250px;
+    margin: -20px 0 -20px -25px;
+}
+
+.skantreid-action, .skantreid-action:visited {
+    background-color: #1b4d9a;
+    color: white;
+}
+
+.skantreid-action:hover {
+    background-color: #3b6093;
+}
+
+.main__scantreid_image {
+    position: absolute;
+    max-width: 900px;
+    top: 110px;
+    left: 700px;
+    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.2));
+    transform: rotate(90deg);
+    animation: rotation 60s infinite linear;
+}
+
+
+
 
 
 .about-us {
@@ -341,6 +472,7 @@
     border: 1px solid #afafaf;
 }
 
+
 /*.machine {*/
 /*    max-width: 500px;*/
 /*    position: relative;*/
@@ -363,25 +495,4 @@
 
 /*.machine img {*/
 /*    width: 100%;*/
-/*}*/
-
-/*@keyframes stitchNeedle {*/
-/*    0% {*/
-/*        transform: translateY(-5%);*/
-/*    }*/
-/*    30% {*/
-/*        transform: translateY(12%); !* Опускание *!*/
-/*    }*/
-/*    35% {*/
-/*        transform: translateY(12%); !* Вибрация внизу *!*/
-/*    }*/
-/*    40% {*/
-/*        transform: translateY(12%);*/
-/*    }*/
-/*    45% {*/
-/*        transform: translateY(12%);*/
-/*    }*/
-/*    100% {*/
-/*        transform: translateY(0); !* Возврат вверх *!*/
-/*    }*/
 /*}*/
