@@ -206,7 +206,7 @@
 }
 
 .animate-spine::after {
-    animation: stitchNeedle 3s 2s infinite;
+    animation: stitchNeedle 3s .5s infinite;
 }
 
 
@@ -249,7 +249,7 @@
     left: 700px;
     filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.2));
     transform: rotate(90deg);
-    animation: rotation 60s infinite linear;
+    animation: rotation 60s linear infinite;
 }
 
 

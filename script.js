@@ -46,7 +46,7 @@
 
     function resetInterval() {
         clearInterval(intervalId);
-        intervalId = setInterval(showNextSlide, 500000);
+        intervalId = setInterval(showNextSlide, 5000);
     }
 
 })();
