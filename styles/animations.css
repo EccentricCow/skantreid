@@ -1,0 +1,72 @@
+@keyframes rotation {
+    0% {
+        transform: rotate(90deg);
+    }
+    25% {
+        transform: rotate(180deg);
+    }
+    50% {
+        transform: rotate(270deg);
+    }
+    75% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes stitchNeedle {
+    0% {
+        transform: translateY(0%);
+    }
+    2% {
+        transform: translateY(20%);
+    }
+    4% {
+        transform: translateY(0%);
+    }
+    6% {
+        transform: translateY(20%);
+    }
+    8% {
+        transform: translateY(0%);
+    }
+    10% {
+        transform: translateY(0%);
+    }
+    12% {
+        transform: translateY(20%);
+    }
+    14% {
+        transform: translateY(0%);
+    }
+    16% {
+        transform: translateY(20%);
+    }
+    18% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+
+}
