@@ -1,23 +1,25 @@
 'use strict';
 
 (() => {
+    // main
+
     const studioImage = document.getElementById('studio-image');
     const r = document.querySelector(':root');
     const mainSlider = document.querySelector('.main__slider');
     const navItems = document.querySelectorAll('.nav__item a');
-    const mainSliderBtns = document.querySelectorAll('.slide-btn');
+    // const mainSliderBtns = document.querySelectorAll('.slide-btn');
     let currentSlide = 0;
     let direction = 1;
     let intervalId;
 
     resetInterval();
 
-    mainSliderBtns.forEach((btn) => {
-        btn.addEventListener('click', () => {
-            showNextSlide();
-            resetInterval();
-        })
-    })
+    // mainSliderBtns.forEach((btn) => {
+    //     btn.addEventListener('click', () => {
+    //         showNextSlide();
+    //         resetInterval();
+    //     })
+    // })
 
     function showNextSlide() {
         if (currentSlide === 0) {
@@ -48,6 +50,15 @@
         clearInterval(intervalId);
         intervalId = setInterval(showNextSlide, 5000);
     }
+
+    // methods
+    const methodsSlider = document.getElementById('methods-slider');
+    $(methodsSlider).slick({
+        slidesToShow: 3,
+        // prevArrow: '#portfolio__arrow_prev',
+        // nextArrow: '#portfolio__arrow_next',
+    });
+
 
 })();
 
