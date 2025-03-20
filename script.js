@@ -1,25 +1,31 @@
 'use strict';
 
 (() => {
+    let wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animate__animated',
+        offset: 200,
+    })
+    wow.init();
     // main
 
     const studioImage = document.getElementById('studio-image');
     const r = document.querySelector(':root');
     const mainSlider = document.querySelector('.main__slider');
-    const navItems = document.querySelectorAll('.nav__item a');
-    // const mainSliderBtns = document.querySelectorAll('.slide-btn');
+    const headerNavItems = document.querySelectorAll('.header-nav-item a, .header-nav-item p');
+    const mainSliderBtns = document.querySelectorAll('.slide-btn');
     let currentSlide = 0;
     let direction = 1;
     let intervalId;
 
     resetInterval();
 
-    // mainSliderBtns.forEach((btn) => {
-    //     btn.addEventListener('click', () => {
-    //         showNextSlide();
-    //         resetInterval();
-    //     })
-    // })
+    mainSliderBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            showNextSlide();
+            resetInterval();
+        })
+    })
 
     function showNextSlide() {
         if (currentSlide === 0) {
@@ -29,18 +35,18 @@
             currentSlide = 0;
             direction = -1;
         }
-        navItems.forEach(item => {
+        headerNavItems.forEach(item => {
             item.classList.remove('light-line', 'dark-line');
         });
         mainSlider.classList.remove('slide-left', 'slide-right');
         if (direction === 1) {
             mainSlider.classList.add('slide-right');
-            navItems.forEach(item => item.classList.add('light-line'));
+            headerNavItems.forEach(item => item.classList.add('light-line'));
             r.style.setProperty('--mainColor', 'white');
             studioImage.classList.add('animate-spine');
         } else {
             mainSlider.classList.add('slide-left');
-            navItems.forEach(item => item.classList.add('dark-line'));
+            headerNavItems.forEach(item => item.classList.add('dark-line'));
             r.style.setProperty('--mainColor', '--darkGray');
             studioImage.classList.remove('animate-spine');
         }
@@ -55,8 +61,6 @@
     const methodsSlider = document.getElementById('methods-slider');
     $(methodsSlider).slick({
         slidesToShow: 3,
-        // prevArrow: '#portfolio__arrow_prev',
-        // nextArrow: '#portfolio__arrow_next',
     });
 
 
