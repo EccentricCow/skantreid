@@ -12,13 +12,17 @@
         this.children[0].classList.toggle('flipped');
     }));
 
-    const toggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenuSwitch = document.querySelector('.mobile-menu-toggle');
     const menu = document.querySelector('.header-nav-list');
 
-    toggle.addEventListener('click', function () {
+    mobileMenuSwitch.addEventListener('click', function () {
         this.classList.toggle('active');
         menu.classList.toggle('active');
     });
+    document.querySelectorAll('.header .nav__item').forEach(item => item.addEventListener('click', function () {
+        mobileMenuSwitch.classList.toggle('active');
+        menu.classList.toggle('active');
+    }));
 
     const studioImage = document.getElementById('studio-image');
     const r = document.querySelector(':root');
@@ -107,6 +111,4 @@
             }
         ],
     });
-
-
 })();

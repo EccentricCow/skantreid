@@ -251,7 +251,6 @@
     animation: stitchNeedle 3s .5s infinite;
 }
 
-
 .company-skantreid {
     background: -webkit-linear-gradient(225deg, rgb(235, 232, 225), rgb(250, 247, 240) 47%, rgb(245, 246, 240) 100%);
     background: -moz-linear-gradient(225deg, rgb(235, 232, 225), rgb(250, 247, 240) 47%, rgb(245, 246, 240) 100%);
@@ -293,6 +292,14 @@
     cursor: pointer;
     padding: 10px;
     z-index: 15;
+}
+
+.mobile-menu-toggle.active {
+    position: fixed;
+}
+
+.mobile-menu-toggle.active .toggle-line {
+    background-color: var(--darkGray);
 }
 
 .toggle-line {
