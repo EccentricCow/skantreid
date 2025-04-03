@@ -2,6 +2,7 @@
 @import "animations.css";
 @import "section-main.css";
 @import "methods.css";
+@import "portfolio.css";
 
 .about-us {
     padding: 140px 0;
@@ -41,7 +42,6 @@
 .about-us__image:hover {
     box-shadow: 2px 2px 10px 0 var(--darkGray);
 }
-
 
 .advantages {
     margin-top: 60px;
@@ -148,7 +148,6 @@
     margin-top: 10px;
 }
 
-/* подправить (квадрат видно белый на карточке */
 .products__items-text {
     width: 100%;
     height: 100%;
@@ -290,8 +289,12 @@
     border-radius: 10px;
 }
 
-
 @media screen and (max-width: 1439px) {
+    .portfolio__slide {
+        width: 400px;
+        padding: 10px 50px;
+    }
+
     .header-nav-list {
         font-size: 18px;
     }
@@ -318,6 +321,18 @@
 }
 
 @media screen and (max-width: 1023px) {
+    .portfolio {
+        padding: 80px 0;
+    }
+
+    .portfolio__slide {
+        padding: 10px 30px;
+    }
+
+    .portfolio__title {
+        margin-bottom: 40px;
+    }
+
     .footer__nav-list {
         display: flex;
         flex-direction: column;
@@ -468,6 +483,7 @@
     .footer__email {
         grid-area: mail;
     }
+
     .footer__socials {
         grid-area: text;
     }
@@ -485,7 +501,6 @@
     }
 
     .header {
-        /*padding: 15px 0;*/
         height: 26px;
     }
 
@@ -584,8 +599,6 @@
 
     .main__title {
         margin-top: 0;
-        /*position: relative;*/
-        /*top: 50px;*/
         text-align: center;
     }
 
@@ -658,6 +671,11 @@
 }
 
 @media screen and (max-width: 424px) {
+    .portfolio__slide {
+        width: 300px;
+        padding: 10px 50px;
+    }
+
     .header .phone-link {
         font-size: 14px;
     }
@@ -682,10 +700,6 @@
     .main__inner {
         padding-top: 0;
         gap: 20px;
-    }
-
-    .main__company {
-        /*padding-top: 175px;*/
     }
 
     .logo__inner {

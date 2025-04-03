@@ -1,0 +1,34 @@
+.portfolio {
+    /*height: 700px;*/
+    padding: 120px 0;
+    background-image: url("../img/portfolio/bg.png");
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+.portfolio__title {
+    margin-bottom: 80px;
+}
+
+.portfolio .slick-track {
+    display: flex;
+    align-items: center;
+}
+
+.portfolio__slide {
+    width: 400px;
+    padding: 10px 100px;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+}
+
+.portfolio__slide_inner {
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px #222;
+}
+
+.portfolio__slide img {
+    width: 100%;
+    filter: drop-shadow(5px 5px 5px #222);
+}
