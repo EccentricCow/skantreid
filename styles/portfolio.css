@@ -25,7 +25,8 @@
 
 .portfolio__slide_inner {
     border-radius: 15px;
-    box-shadow: 3px 3px 3px #222;
+    box-shadow: 3px 3px 5px #222;
+    overflow: hidden;
 }
 
 .portfolio__slide img {
