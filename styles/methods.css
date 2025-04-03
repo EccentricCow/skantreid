@@ -1,0 +1,105 @@
+.methods {
+    padding: 140px 0;
+}
+
+.methods__container {
+    position: relative;
+}
+
+.methods .slick-track {
+    display: flex;
+    padding: 40px 0;
+}
+
+.methods-title {
+    margin-bottom: 40px;
+}
+
+.methods .draggable {
+    margin: 0 auto;
+    max-width: 1170px;
+}
+
+.methods__slide {
+    perspective: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 290px;
+    height: 202.5px;
+}
+
+.methods__slide-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.methods__slide-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.methods__slide-text {
+    font-family: OpenSansRegular, sans-serif;
+    font-size: 16px;
+    background: linear-gradient(225deg, rgb(235, 232, 225), rgb(250, 247, 240) 47%, rgb(245, 246, 240) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 20px 15px 10px 15px;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.methods__slide_title {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.chevron .methods__slide-inner {
+    background: #96a478;
+}
+
+.methods .slick-prev {
+    top: 140px;
+    left: -15px;
+}
+
+.methods .slick-next {
+    top: 140px;
+    right: -13px;
+}
+
+.methods .slick-prev:before, .methods .slick-next:before {
+    color: rgba(44, 44, 44, 0.49);
+    font-size: 30px;
+}
+
+.slick-next.slick-arrow, .slick-prev.slick-arrow {
+    width: 30px;
+    height: 30px;
+    z-index: 5;
+}
+
+.methods .slick-dots {
+    bottom: -30px;
+}
+

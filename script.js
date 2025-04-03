@@ -7,7 +7,11 @@
         offset: 200,
     })
     wow.init();
-    // main
+
+    document.querySelectorAll('.methods__slide').forEach(inner => inner.addEventListener('click', function () {
+        this.children[0].classList.toggle('flipped');
+    }));
+
     const toggle = document.querySelector('.mobile-menu-toggle');
     const menu = document.querySelector('.header-nav-list');
 
@@ -61,7 +65,7 @@
 
     function resetInterval() {
         clearInterval(intervalId);
-        // intervalId = setInterval(showNextSlide, 5000);
+        intervalId = setInterval(showNextSlide, 5000);
     }
 
     if (window.matchMedia('(max-device-width: 1023px)').matches) {
@@ -88,90 +92,21 @@
         );
     }
 
-    // if (window.matchMedia('(max-device-width: 767px)').matches) {
-    //     $(advantagesSlider).slick();
-    // }
-
-
-    // methods
     const methodsSlider = document.getElementById('methods-slider');
     $(methodsSlider).slick({
         slidesToShow: 3,
         infinite: false,
+        responsive: [
+            {
+                breakpoint: 1023,
+                settings: {
+                    slidesToShow: 1,
+                    dots: true,
+                    arrows: false,
+                }
+            }
+        ],
     });
 
 
 })();
-
-
-// let direction = false;
-// const mainSlider = $('.main__slider');
-// mainSlider.slick({
-//     arrows: false,
-//     infinity: false,
-//     // autoplay: true,
-//     autoplaySpeed: 1000,
-//     pauseOnFocus: false,
-//     pauseOnHover: false,
-//     slidesToShow: 1,
-//     fade: false,
-// })
-//     .on('afterChange', (event, slick, currentSlide, nextSlide) => {
-//         // mainSlider.slick('slickGoTo', 0);
-//         console.log(currentSlide);
-//     })
-
-
-// $('.advantages__inner').slick({
-//     infinite: false,
-//     lazyLoad: 'ondemand',
-//     variableWidth: true,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     centerMode: true,
-//     appendArrows: $('#advantages__num'),
-//     prevArrow: '<button type="button" id="advantages__arrow_prev" class="slider__arrows">\n' +
-//         '                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">\n' +
-//         '                    <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>\n' +
-//         '                </svg>\n' +
-//         '            </button>',
-//     nextArrow: '<button type="button" id="advantages__arrow_next" class="slider__arrows">\n' +
-//         '                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">\n' +
-//         '                    <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>\n' +
-//         '                </svg>\n' +
-//         '            </button>',
-// })
-//     .on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-//         advantagesNumCenter.text(sliderChangeActiveNum(nextSlide));
-//     })
-// }
-
-// autoplay: false,
-//     allowTouchMove: false,
-//     swipe: false,
-//     infinite: false,
-//     arrows: false,
-//     variableWidth: true,
-//     slidesToShow: 6,
-//     focusOnSelect: true,
-//     asNavFor: '.portfolio__slider'
-
-
-// infinite: false,
-//     lazyLoad: 'ondemand',
-//     initialSlide: 1,
-//     centerMode: true,
-//     variableWidth: true,
-//     centerPadding: 0,
-//     responsive: [
-//     {
-//         // изменения при 1140р
-//         breakpoint: 1142,
-//         settings: {
-//             initialSlide: 0,
-//         }
-//     },
-// ],
-//     appendArrows: $('#reviews__num'),
-//     prevArrow: $('#reviews__arrow_prev'),
-//     nextArrow: $('#reviews__arrow_next'),
