@@ -1,8 +1,7 @@
 :root {
-    --darkGray: rgb(44, 44, 44);
+    --darkGray: rgba(44, 44, 44);
     --mainColor: rgb(44, 44, 44);
-    --fontSizeMainTitle: 60px;
-    --fontSizeSecondTitle: 48px;
+    --fontSizeTitle: 45px;
 }
 
 @font-face {
@@ -49,7 +48,7 @@ a:visited {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1140px;
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -57,7 +56,7 @@ a:visited {
 .second-title {
     text-align: center;
     font-family: LoraBold, sans-serif;
-    font-size: var(--fontSizeSecondTitle);
+    font-size: var(--fontSizeTitle);
 }
 
 .block-shadow {

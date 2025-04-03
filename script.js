@@ -8,12 +8,19 @@
     })
     wow.init();
     // main
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.querySelector('.header-nav-list');
+
+    toggle.addEventListener('click', function () {
+        this.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
 
     const studioImage = document.getElementById('studio-image');
     const r = document.querySelector(':root');
     const mainSlider = document.querySelector('.main__slider');
-    const headerNavItems = document.querySelectorAll('.header-nav-item a, .header-nav-item p');
-    const mainSliderBtns = document.querySelectorAll('.slide-btn');
+    const headerNavItems = document.querySelectorAll('.header-nav-item a:not(.phone-link)');
+    const mainSliderBtns = document.querySelectorAll('.slide_btn');
     let currentSlide = 0;
     let direction = 1;
     let intervalId;
@@ -47,20 +54,50 @@
         } else {
             mainSlider.classList.add('slide-left');
             headerNavItems.forEach(item => item.classList.add('dark-line'));
-            r.style.setProperty('--mainColor', '--darkGray');
+            r.style.setProperty('--mainColor', 'var(--darkGray)');
             studioImage.classList.remove('animate-spine');
         }
     }
 
     function resetInterval() {
         clearInterval(intervalId);
-        intervalId = setInterval(showNextSlide, 5000);
+        // intervalId = setInterval(showNextSlide, 5000);
     }
+
+    if (window.matchMedia('(max-device-width: 1023px)').matches) {
+        const advantagesSlider = document.getElementById('advantages');
+        $(advantagesSlider).slick({
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: false,
+            variableWidth: true,
+            arrows: true,
+            responsive: [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                }
+            ],
+
+        });
+        document.querySelectorAll('.advantages.slick-slider .slick-arrow').forEach(btn =>
+            document.querySelector('.advantages.slick-slider .slick-list').appendChild(btn)
+        );
+    }
+
+    // if (window.matchMedia('(max-device-width: 767px)').matches) {
+    //     $(advantagesSlider).slick();
+    // }
+
 
     // methods
     const methodsSlider = document.getElementById('methods-slider');
     $(methodsSlider).slick({
         slidesToShow: 3,
+        infinite: false,
     });
 
 
