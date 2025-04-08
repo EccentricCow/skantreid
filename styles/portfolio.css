@@ -34,3 +34,12 @@
     width: 100%;
     filter: drop-shadow(5px 5px 5px #222);
 }
+
+.portfolio__slide_second-shadow img {
+    filter: drop-shadow(2px 2px 2px #222);
+}
+
+.portfolio__vertical img {
+    max-height: 310px;
+    width: unset;
+}

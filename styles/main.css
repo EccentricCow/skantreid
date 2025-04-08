@@ -458,6 +458,10 @@
     .advantage__number_span {
         right: 15px;
     }
+
+    .portfolio__vertical img {
+        max-height: 240px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -662,6 +666,16 @@
         min-width: unset;
         width: 100%;
     }
+
+    .portfolio__vertical img {
+        max-height: 150px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .portfolio__vertical img {
+        max-height: 100px;
+    }
 }
 
 @media screen and (max-width: 458px) {
@@ -671,6 +685,10 @@
 }
 
 @media screen and (max-width: 424px) {
+    .portfolio__vertical img {
+        max-height: 300px;
+    }
+
     .portfolio__slide {
         width: 300px;
         padding: 10px 50px;
@@ -725,4 +743,8 @@
     }
 }
 
-
+@media screen and (max-width: 375px) {
+    .portfolio__vertical img {
+        max-height: 230px;
+    }
+}
