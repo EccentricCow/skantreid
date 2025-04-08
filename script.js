@@ -114,7 +114,7 @@
 
     const portfolioSlider = document.getElementById('portfolio__slider');
     $(portfolioSlider).slick({
-        // autoplay: true,
+        autoplay: true,
         slidesToShow: 3,
         autoplaySpeed: 1500,
         cssEase: 'linear',
