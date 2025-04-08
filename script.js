@@ -72,30 +72,6 @@
         intervalId = setInterval(showNextSlide, 5000);
     }
 
-    if (window.matchMedia('(max-device-width: 1023px)').matches) {
-        const advantagesSlider = document.getElementById('advantages');
-        $(advantagesSlider).slick({
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            infinite: false,
-            variableWidth: true,
-            arrows: true,
-            responsive: [
-                {
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                    }
-                }
-            ],
-
-        });
-        document.querySelectorAll('.advantages.slick-slider .slick-arrow').forEach(btn =>
-            document.querySelector('.advantages.slick-slider .slick-list').appendChild(btn)
-        );
-    }
-
     const methodsSlider = document.getElementById('methods-slider');
     $(methodsSlider).slick({
         slidesToShow: 3,
@@ -129,4 +105,36 @@
             }
         ],
     });
+
+    if (window.matchMedia('(max-device-width: 1023px)').matches) {
+        const advantagesSlider = document.getElementById('advantages');
+        $(advantagesSlider).slick({
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: false,
+            variableWidth: true,
+            arrows: true,
+            responsive: [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                }
+            ],
+
+        });
+        document.querySelectorAll('.advantages.slick-slider .slick-arrow').forEach(btn =>
+            document.querySelector('.advantages.slick-slider .slick-list').appendChild(btn)
+        );
+    }
+    if (window.matchMedia('(max-device-width: 424px)').matches) {
+        const productCards = document.querySelectorAll('.products__card');
+        productCards.forEach(card => card.addEventListener('click', () => {
+            card.children[0].children[1].classList.toggle('products__items-text-active');
+        }));
+    }
+
+
 })();

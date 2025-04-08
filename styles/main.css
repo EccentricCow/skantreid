@@ -685,6 +685,14 @@
 }
 
 @media screen and (max-width: 424px) {
+    .products__items-text {
+        display: none;
+    }
+
+    .products__items-text-active {
+        display: flex;
+    }
+
     .portfolio__vertical img {
         max-height: 300px;
     }
