@@ -129,6 +129,7 @@
             document.querySelector('.advantages.slick-slider .slick-list').appendChild(btn)
         );
     }
+
     if (window.matchMedia('(max-device-width: 424px)').matches) {
         const productCards = document.querySelectorAll('.products__card');
         productCards.forEach(card => card.addEventListener('click', () => {
